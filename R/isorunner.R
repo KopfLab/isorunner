@@ -4,6 +4,7 @@
 #' @import dplyr
 #' @import tidyr
 #' @import ggplot2
+#' @import stringr
 #' @importFrom lazyeval interp
 NULL
 

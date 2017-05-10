@@ -12,8 +12,8 @@ get_si_prefix_scaling <- function(unit, suffix) {
   pattern <- sprintf("^(%s)%s$", prefix_pattern, suffix)
   prefixes <- unit %>% str_match(pattern) %>% { .[,2] }
   if (any(is.na(prefixes))) {
-    stop("Encountered unsupported prefix(es): ", unit[is.na(prefixes)] %>% str_c(collapse = ", "),
-         ". Supported are: ", prefix %>% names() %>% str_c(suffix) %>% str_c(collapse = ", "),
+    stop("Encountered unrecognized units: ", unit[is.na(prefixes)] %>% str_c(collapse = ", "),
+         ". Supported are for this suffix: ", prefix %>% names() %>% str_c(suffix) %>% str_c(collapse = ", "),
          call. = FALSE)
   }
 
